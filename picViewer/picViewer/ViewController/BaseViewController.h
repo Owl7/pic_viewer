@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BaseViewController.h
 //  picViewer
 //
 //  Created by 彭益伟 on 5/5/16.
@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
 
-@interface ViewController : BaseViewController
-
+@interface BaseViewController : UIViewController
 
 @end
-

@@ -1,0 +1,53 @@
+//
+//  PrefixHeader.pch
+//  picViewer
+//
+//  Created by 彭益伟 on 5/5/16.
+//  Copyright © 2016 pengyiwei. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <UIKit/UIKit.h>             //UI
+#import <Foundation/Foundation.h> //NS
+
+//这个文件中,经常会声明一些全局变量或者方法
+#import "AppDelegate.h"
+
+//全局宏定义文件
+#import "Constants.h"
+#import "Methods.h"
+
+//集成CocoaLumberjack:取代NSLog
+#import <CocoaLumberjack.h>
+//定义当前打印的 打印等级
+#ifdef DEBUG //当前是调试模式
+//verbose>info>warning>error
+static const int ddLogLevel = DDLogLevelVerbose;
+#else //已上架模式
+static const int ddLogLevel = DDLogLevelError;
+#endif
+
+//只要有网络操作
+#import <AFNetworking.h>
+#import <UIKit+AFNetworking.h>
+
+//头部刷新
+//#import <MJRefresh.h>
+#import "UIScrollView+Refresh.h"
+#import "NSObject+HUD.h"
+
+/*按照功能需求 可选  */
+//#import <FMDB.h>
+//#import <CocoaAsyncSocket.h>
+//......
+
+#import <Masonry.h>
+#import <BlocksKit.h>
+#import <BlocksKit+UIKit.h>
+
+#endif /* PrefixHeader_pch */
